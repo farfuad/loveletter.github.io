@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy Birthday Slides</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap">
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<div class="container center">
+		<div class="slide active">
+			<h1>You know what day it is? Its a very special day</h1>
+		</div>
+		<div class="slide">
+			<h1>It's April the 8th. You were born in this day</h1>
+		</div>
+		<div class="slide">
+			<h1>This day is special to me beacuse on this day the reason behind my smile happened</h1>
+		</div>
+        <div class="slide">
+			<h1>It's your birthday</h1>
+		</div>
+	</div>
+
+	<script>
+		var slides = document.querySelectorAll('.slide');
+		var currentSlide = 0;
+
+		document.addEventListener('contextmenu', function(event) {
+			event.preventDefault();
+
+			slides[currentSlide].classList.remove('active');
+
+			if (currentSlide === slides.length - 1) {
+				currentSlide = 0;
+			} else {
+				currentSlide++;
+			}
+
+			slides[currentSlide].classList.add('active');
+		});
+	</script>
+</body>
+</html>
